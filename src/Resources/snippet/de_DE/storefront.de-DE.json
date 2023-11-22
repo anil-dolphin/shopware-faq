@@ -1,0 +1,17 @@
+{
+  "dolphin_product_faq": {
+    "tabTitle": "Häufig gestellte Fragen",
+    "nickname": "Name",
+    "question": "Frage",
+    "answer": "Antwort",
+    "email": "E-Mail-Addresse",
+    "noFaqText": "Derzeit gibt es keine FAQ",
+    "emailValidation": "E-Mail im Format john@example.com erforderlich.",
+    "nicknameValidation": "Name erforderlich.",
+    "questionValidation": "Frage erforderlich.",
+    "faqSaveSuccess": "Deine Frage wurde eingereicht. Ich werde Ihre Frage bald beantworten.",
+    "emailSuccess": "E-Mail wurde an den Kunden gesendet.",
+    "askQuestion": "Frage stellen",
+    "close": "Schließen"
+  }
+}

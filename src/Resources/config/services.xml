@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Dolphin\Productfaq\Core\Content\ProductFaq\ProductFaqDefinition">
+            <tag name="shopware.entity.definition" entity="dolphin_product_faq" />
+        </service>
+        <service id="Dolphin\Productfaq\Storefront\Subscriber\ProductDetailSubscriber">
+            <argument id="Shopware\Core\System\SystemConfig\SystemConfigService" type="service"/>
+            <argument id="dolphin_product_faq.repository" type="service" />
+            <tag name="kernel.event_subscriber"/>
+        </service>
+        <service id="Dolphin\Productfaq\Resources\snippet\en_GB\SnippetFile_en_GB">
+            <tag name="shopware.snippet.file" />
+        </service>
+        <service id="Dolphin\Productfaq\Resources\snippet\de_DE\SnippetFile_de_DE">
+            <tag name="shopware.snippet.file" />
+        </service>
+
+        <service id="Dolphin\Productfaq\Controller\ProductController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+            <argument type="service" id="dolphin_product_faq.repository"/>
+            <argument type="service" id="Shopware\Core\Content\Mail\Service\MailService"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+    </services>
+</container>

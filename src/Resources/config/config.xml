@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>General Settings</title>
+        <title lang="de-DE">Allgemeine Einstellungen</title>
+        <input-field type="text">
+            <name>emailrecievers</name>
+            <label>New Question Email Receivers</label>
+            <label lang="de-DE">Neue Frage-E-Mail-Empfänger</label>
+            <copyable>true</copyable>
+            <placeholder>you@example.com</placeholder>
+            <placeholder lang="de-DE">du@beispiel.de</placeholder>
+        </input-field>
+        <input-field type="single-select">
+            <name>loginrequired</name>
+            <label>Customer Login Required</label>
+            <label lang="de-DE">Kundenanmeldung erforderlich</label>
+            <options>
+                <option>
+                    <id>no</id>
+                    <name>No</name>
+                    <name lang="de-DE">NEIN</name>
+                </option>
+                <option>
+                    <id>yes</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                </option>
+            </options>
+            <defaultValue>no</defaultValue>
+        </input-field>
+         <input-field type="int">
+            <name>perpage</name>
+            <label>Questions Per Page</label>
+            <label lang="de-DE">Fragen pro Seite</label>
+            <defaultValue>5</defaultValue>
+        </input-field>
+        <input-field type="single-select">
+            <name>askquestions</name>
+            <label>Allow Ask Questions</label>
+            <label lang="de-DE">Stellen Sie Fragen</label>
+            <options>
+                <option>
+                    <id>no</id>
+                    <name>No</name>
+                    <name lang="de-DE">NEIN</name>
+                </option>
+                <option>
+                    <id>yes</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                </option>
+            </options>
+            <defaultValue>yes</defaultValue>
+        </input-field>
+    </card>
+</config>

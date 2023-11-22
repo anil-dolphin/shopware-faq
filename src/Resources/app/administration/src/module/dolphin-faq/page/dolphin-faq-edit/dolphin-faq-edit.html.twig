@@ -1,0 +1,46 @@
+{% block dolphin_faq_detail %}
+	<sw-page class="dolphin-faq-detail">
+
+		<template slot="smart-bar-actions">
+			<sw-button @click="onCancel">
+				{{ $t('dolphin-faq.buttons.cancel') }}
+			</sw-button>
+			<sw-button-process :isloading="isLoading" :processsuccess="processSuccess" variant="primary" @process-finish="saveFinish" @click="onClickSave">
+				{{ $t('dolphin-faq.buttons.update') }}
+			</sw-button-process>
+		</template>
+
+		<template slot="content">
+			<sw-card-view>
+				<sw-card v-if="faqCollection" :isloading="isLoading">
+					<div :style="containerStyle">
+						<sw-card-section>
+							<sw-switch-field required :label="$t('dolphin-faq.field.active')" v-model="faqCollection.active"></sw-switch-field>
+							<sw-field required :label="$t('dolphin-faq.field.nickname')" v-model="faqCollection.nickname" :disabled="true"></sw-field>
+							<sw-email-field required :label="$t('dolphin-faq.field.email')" v-model="faqCollection.email" :disabled="true"></sw-email-field>
+							<sw-textarea-field required maxlength="255" :label="$t('dolphin-faq.field.question')" v-model="faqCollection.question"></sw-textarea-field>
+							<sw-textarea-field required maxlength="255" :label="$t('dolphin-faq.field.answer')" v-model="faqCollection.answer"></sw-textarea-field>
+							<sw-checkbox-field type="checkbox" v-model="sendEmail" v-if="faqCollection.email" :label="$t('dolphin-faq.field.notify')"></sw-checkbox-field>
+							<sw-select-field required v-model="showGrid" :label="$t('dolphin-faq.field.group')">
+								<option :value="0">
+									{{ $tc('dolphin-faq.option.general') }}
+								</option>
+								<option :value="1">
+									{{ $tc('dolphin-faq.option.specific') }}
+								</option>
+							</sw-select-field>
+						</sw-card-section>
+						<sw-card-section v-if="showGrid === '1'">
+							<sw-simple-search-field required  :label="$tc('dolphin-faq.field.product')" v-model="searchTerm" variant="form" size="small" @search-term-change="onChangeSearchTerm"/>
+							<sw-entity-advanced-selection-modal-grid :pre-selection="currentSelection" identifier="sw-product-list" v-if="products.length > 0"  class="sw-entity-advanced-selection-modal__grid" :repository="productRepository" :items="products" :columns="productColumns" :plain-appearance="true" :skeleton-item-amount="limit" :is-loading="isLoading" :allow-column-edit="false" :allow-inline-edit="false" :allow-delete="false" :show-actions="false" :show-settings="false" @selection-change="onSelectionChange">
+								<template #pagination>
+									<sw-pagination v-bind="{ page, limit, total }" :total-visible="3" :auto-hide="true" @page-change="onChangePage"/>
+								</template>
+							</sw-entity-advanced-selection-modal-grid>
+						</sw-data-grid>
+					</sw-card-section>
+				</div>
+			</sw-card>
+		</sw-card-view>
+	</template>
+</sw-page>{% endblock %}

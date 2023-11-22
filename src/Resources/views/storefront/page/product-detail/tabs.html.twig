@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/tabs.html.twig' %}
+{% set flag = true %}
+{% if config('DolphinProductFaq.config.loginrequired') == 'yes' %}
+	{% set flag = false %}
+	{% if context.customer and not context.customer.guest %}
+		{% set flag = true %}
+	{% endif %}
+{% endif %}
+{% block page_product_detail_tabs_navigation_review %}
+	{{ parent() }}
+	{% if flag %}
+		<li class="nav-item">
+			<a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link" id="producfaq-tab" data-bs-toggle="tab" data-offcanvas-tabs="true" href="#productfaq-tab-pane" role="tab" aria-controls="productfaq-tab-pane" aria-selected="true">
+				{{ 'dolphin_product_faq.tabTitle'|trans }}
+				<span class="product-detail-tab-navigation-icon">
+					{% sw_icon 'arrow-medium-right' style {'pack':'solid'} %}
+				</span>
+			</a>
+		</li>
+	{% endif %}
+{% endblock %}
+
+{% block page_product_detail_tabs_content_review %}
+	{{ parent() }}
+	{% if flag %}
+		<div class="tab-pane fade show {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} " id="productfaq-tab-pane" role="tabpanel" aria-labelledby="productfaq-tab">
+			{% sw_include '@Storefront/storefront/page/product-detail/productfaq/productfaq.html.twig' with { 'dolphin_product_faq': page.extensions.dolphin_product_faq } %}
+		</div>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{
+  "dolphin-faq": {
+    "title": {
+      "edit": "Edit Product FAQ",
+      "add": "Add New Product FAQ",
+      "list": "Manage Product FAQ"
+    },
+    "field": {
+      "active": "Status",
+      "email": "Customer E-mail",
+      "nickname": "Customer Name",
+      "question": "Question",
+      "answer": "Answer",
+      "product": "Product",
+      "group": "Group",
+      "notify": "Notify Customer"
+    },
+    "option": {
+      "general": "General",
+      "specific": "Specific Product"
+    },
+    "message": {
+      "validation-error": "Please fill in all required fields.",
+      "validation-add-success": "FAQ Added Successfully",
+      "validation-update-success": "FAQ Updated Successfully",
+      "customer-notify": "FAQ notified to customer"
+    },
+    "buttons": {
+      "save": "Save",
+      "update": "Update",
+      "cancel": "Cancel",
+      "new": "Add New",
+      "edit": "Edit"
+    }
+  }
+}

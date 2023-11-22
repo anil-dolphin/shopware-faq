@@ -1,0 +1,36 @@
+<div class="product-faq-form">
+	<div class="ask-que">
+		<button class="btn btn-primary" id="askquebtn" style="display: inline-block;">{{ 'dolphin_product_faq.askQuestion'|trans }}</button>
+	</div>
+	<div id="askqueform" style="display: none;">
+		<form id="queform" action="{{ url('frontend.productfaq.save') }}">
+			<div class="mb-3">
+				<label for="question" class="form-label">{{ 'dolphin_product_faq.question'|trans }}</label>
+				<textarea name="question" id="question" rows="4" cols="50" class="form-control" required></textarea>
+				<span id="question-error" class="error-message" style="display: none;">{{ 'dolphin_product_faq.questionValidation'|trans }}</span>
+			</div>
+			<div class="mb-3 mt-3">
+				<label for="nickname" class="form-label">{{ 'dolphin_product_faq.nickname'|trans }}</label>
+				<input type="text" class="form-control" id="nickname" name="nickname" required/>
+				<span id="nickname-error" class="error-message" style="display: none;">{{ 'dolphin_product_faq.nicknameValidation'|trans }}</span>
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">{{ 'dolphin_product_faq.email'|trans }}</label>
+				<input type="email" class="form-control" id="email" name="email" required/>
+				<span id="email-error" class="error-message" style="display: none;">{{ 'dolphin_product_faq.emailValidation'|trans }}</span>
+			</div>
+			<input type="hidden" name="product" value="{{page.product.parentId ? page.product.parentId : page.product.id}}"/>
+			<input type="hidden" name="product_name" value="{{page.product.translated.name}}"/>
+			<div class="actions-toolbar">
+				<div class="primary">
+					<button type="submit" id="que_submit" class="btn btn-primary" title="Ask Question">
+						<span>{{ 'dolphin_product_faq.askQuestion'|trans }}</span>
+					</button>
+				</div>
+				<div class="close_form">
+					<a href="javascript:void(0)" id="closeform" class="closeform_btn">{{ 'dolphin_product_faq.close'|trans }}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

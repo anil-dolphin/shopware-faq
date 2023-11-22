@@ -1,0 +1,35 @@
+{
+  "name": "dolphin/productfaq",
+  "description": "Product FAQ plugin",
+  "version": "1.0.0",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Dolphin\\Productfaq\\": "src/"
+    }
+  },
+  "require": {
+    "shopware/core": ">=6.3.0",
+    "shopware/administration": ">=6.3.0"
+  },
+  "authors": [
+    {
+      "name": "DOLPHIN WEB SOLUTION PVT. LTD.",
+      "homepage": "https://dolphinwebsolution.com/"
+    }
+  ],
+  "extra": {
+    "copyright": "Copyright © 2023 DOLPHIN WEB SOLUTION PVT. LTD.",
+    "shopware-plugin-class": "Dolphin\\Productfaq\\DolphinProductFaq",
+    "plugin-icon": "src/Resources/config/plugin.png",
+    "label": {
+      "en-GB": "Product FAQ",
+      "de-DE": "Produkt-FAQ"
+    },
+    "description": {
+      "en-GB": "Product Question and FAQ for Shopware 6",
+      "de-DE": "Produktfrage und FAQ zu Shopware 6"
+    }
+  }
+}

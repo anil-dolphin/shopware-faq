@@ -1,0 +1,109 @@
+.is-ctl-product{
+    .product-detail-tabs-content{
+        padding: 35px 10px;
+    }
+    @media (max-width: 575px) {
+        .product-faq{
+            padding: 20px;
+        }
+    }
+    .product-faq{
+        .product-faq-form{
+            margin-bottom: 20px;
+            button.btn.btn-primary {
+                border-radius: 5px;
+                padding: 7px 15px;
+                line-height: unset;
+            }
+            #askqueform{
+                .error-message{
+                    color: #e02b27;
+                }
+                .actions-toolbar{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 20px;
+                }
+            }
+        }
+        .product-faq-list{
+            .h4{
+                margin: 20px 0px;
+            }
+            .product-faq-item{
+                border: 1px solid #cccccc;
+                border-radius: 5px;
+                overflow: hidden;
+                margin-bottom: 20px;
+                .que_content{
+                    font-size: 17px;
+                    display: block;
+                    color: #000000;
+                    cursor: pointer;
+                    background-color: #f9f9f9;
+                    padding: 10px;
+                    text-transform: capitalize;
+                    display: flex;
+                    column-gap: 8px;
+                    align-items: center;
+                    .que_content_text{
+                        flex: 1;
+                    }
+                    .que_icon{
+                        svg{
+                            margin-top: -2px;
+                        }
+                    }
+                    &.active{
+                        .angle_arrow{
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+                .answer-section{
+                    font-size: 16px;
+                    .answer-section-text{
+                        padding: 10px 10px 10px 34px;
+                    }
+                }
+            }
+            .product-faq-pagination{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                p{
+                    margin: 0px;
+                }
+                &-pages{
+                    display: flex;      
+                    column-gap: 3px;
+                    span{
+                        border: 1px solid #ccc;
+                        height: 35px;
+                        width: 35px;
+                        text-align: center;
+                        background-color: #f9f9f9;
+                        border-radius: 3px;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        &.active{
+                            cursor:auto;
+                            background: #0b539b;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 575px){
+    .is-ctl-product{
+        .product-faq{
+            padding: 20px;
+        }
+    }
+}

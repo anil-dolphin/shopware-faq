@@ -1,0 +1,32 @@
+{% block dolphin_module_list %}
+	<sw-page v-if="allowView()">
+		<template slot="smart-bar-actions">
+			<sw-button-process v-if="allowAddNew()" :isloading="isLoading" :processsuccess="processSuccess" variant="primary" @process-finish="saveFinish" @click="addNew">
+				{{ $t('dolphin-faq.buttons.new') }}
+			</sw-button-process>
+		</template>
+		<template slot="content">
+			{% block dolphin_faq_list %}
+				<sw-entity-listing v-if="faqCollection" :items="faqCollection" :repository="repository" :showselection="true" :columns="columns">
+					{% block dolphin_faq_list_grid_columns_actions %}
+						<template #more-actions="{ item }">
+							{% block dolphin_faq_list_grid_columns_actions_edit %}
+								<sw-context-menu-item v-if="allowEdit()" class="dolphin-faq-list-grid__edit-action" @click="editItem(item)">
+									{{ $t('dolphin-faq.buttons.edit') }}
+								</sw-context-menu-item>
+							{% endblock %}
+						</template>
+						<template #column-active="{ item }">
+							{% block dolphin_faq_list_grid_columns_active_content %}
+								<template>
+									<sw-icon color="#1abc9c" v-if="item.active" name="regular-checkmark-xs" small class="is--active"/>
+									<sw-icon color="#fc427b" v-else name="regular-times-s" small class="is--inactive"/>
+								</template>
+							{% endblock %}
+						</template>
+					{% endblock %}
+				</sw-entity-listing>
+			{% endblock %}
+		</template>
+	</sw-page>
+{% endblock %}

@@ -1,0 +1,37 @@
+{
+    "dolphin-faq": {
+      "title": {
+        "edit": "Bearbeiten Sie die Produkt-FAQ",
+        "add": "FAQ zu neuen Produkten hinzufügen",
+        "list": "Produkt-FAQ verwalten"
+      },
+      "field": {
+        "active": "Status",
+        "email": "Kunden-eMail",
+        "nickname": "Kundenname",
+        "question": "Frage",
+        "answer": "Antworten",
+        "product": "Produkt",
+        "group": "Gruppe",
+        "notify": "Kunden benachrichtigen"
+      },
+      "option": {
+        "general": "Allgemein",
+        "specific": "Spezifisches Produkt"
+      },
+      "message": {
+        "validation-error": "Bitte füllen Sie alle geforderten Felder aus.",
+        "validation-add-success": "FAQ erfolgreich hinzugefügt",
+        "validation-update-success": "FAQ erfolgreich aktualisiert",
+        "customer-notify": "FAQ dem Kunden mitgeteilt"
+      },
+      "buttons": {
+        "save": "Speichern",
+        "update": "Aktualisieren",
+        "cancel": "Stornieren",
+        "new": "Neue hinzufügen",
+        "edit": "Bearbeiten"
+      }
+    }
+  }
+  
